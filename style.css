@@ -30,9 +30,12 @@
 
 body {
   --bgColor: var(--white);
-  --textColor: var(--veryDarkDesaturatedBlue);
+  --textColor: var(--darkGrayishBlue);
   font-size: var(--bodyTextSize);
   font-family: var(--bodyFont);
+  font-weight: 600;
+  color: var(--textColor);
+  line-height: 1.666em;
   font-weight: 600;
 }
 
@@ -41,6 +44,7 @@ img {
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--veryDarkDesaturatedBlue);
   font-family: var(--headingFont);
   font-weight: 900;
 }
@@ -51,6 +55,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 2rem 1.5rem 0;
 }
 
 .nav__logo {
@@ -68,11 +73,14 @@ nav {
 }
 
 .menu.open {
-  background: var(--white);
+  position: relative;
+}
+
+ul {
+  list-style: none;
 }
 
 .menu__list {
-  list-style: none;
   display: none;
 }
 
@@ -101,4 +109,13 @@ header {
   letter-spacing: 6.25px;
   text-transform: uppercase;
   padding-bottom: 3.25rem;
+}
+
+.section__content {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.section__content--heading {
+  font-size: 2rem;
 }
