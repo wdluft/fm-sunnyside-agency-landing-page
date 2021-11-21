@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components/macro';
+import { COLORS, WEIGHTS, QUERIES } from '../utils/constants';
 
 const GlobalStyles = createGlobalStyle`
   /* =================================================== */
@@ -59,6 +60,48 @@ const GlobalStyles = createGlobalStyle`
   /* =================================================== */
   /* GLOBAL STYLES */
   /* =================================================== */
+  :root {
+    /* PRIMARY COLORS */
+    --color-primary-red: hsl(${COLORS.primary.red});
+    --color-primary-yellow: hsl(${COLORS.primary.yellow});
+    --color-primary-desaturated-cyan: hsl(${COLORS.primary.desaturatedCyan});
+    --color-primary-dark-cyan: hsl(${COLORS.primary.darkCyan});
+    --color-primary-dark-blue: hsl(${COLORS.primary.darkBlue});
+    
+    /* NEUTRAL COLORS */
+    --color-neutral-white: hsl(${COLORS.neutral.white});
+    --color-neutral-sd-desat-blue: hsl(${
+      COLORS.neutral.superDarkDesaturatedBlue
+    });
+    --color-neutral-sd-gray-blue: hsl(${COLORS.neutral.superDarkGrayBlue});
+    --color-neutral-d-gray-blue: hsl(${COLORS.neutral.darkGrayBlue});
+    --color-neutral-gray-blue: hsl(${COLORS.neutral.grayBlue});
+
+    /* TEXT STYLES */
+    --system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-body: 'Barlow';
+    --font-heading: 'Fraunces';
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    --text-color: var(--color-color-neutral-d-gray-blue);
+    --bg-color: var(--color-neutral-white);
+
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--system-font-stack), var(--font-body);
+    font-weight: ${WEIGHTS.normal};
+    font-size: calc(${18 / 16}rem);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: ${WEIGHTS.bold};
+  }
 `;
 
 export default GlobalStyles;
