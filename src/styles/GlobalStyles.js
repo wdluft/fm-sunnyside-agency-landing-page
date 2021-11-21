@@ -41,7 +41,8 @@ const GlobalStyles = createGlobalStyle`
   }
   /* 5. Make images easier to work with */
   img,
-  picture {
+  picture,
+  svg {
     max-width: 100%;
     display: block;
   }
@@ -101,6 +102,11 @@ const GlobalStyles = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: ${WEIGHTS.bold};
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 `;
 
