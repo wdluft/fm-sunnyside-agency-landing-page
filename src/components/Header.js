@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { QUERIES } from '../utils/constants';
+import { COLORS, QUERIES, WEIGHTS } from '../utils/constants';
 import MobileNav from './MobileNav';
 import VisuallyHidden from './VisuallyHidden';
 
@@ -20,10 +20,10 @@ const Header = () => {
       </LogoWrapper>
 
       <DesktopNav>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <NavLink href="#">About</NavLink>
+        <NavLink href="#">Services</NavLink>
+        <NavLink href="#">Projects</NavLink>
+        <ContactButton href="#">Contact</ContactButton>
       </DesktopNav>
 
       <MobileButton onClick={() => setShowMobileMenu(!showMobileMenu)}>
@@ -50,16 +50,48 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  width: 100%;
 `;
 
-const LogoWrapper = styled.div``;
+const LogoWrapper = styled.div`
+  @media ${QUERIES.laptopAndUp} {
+    svg {
+      transform: scale(1.37);
+    }
+  }
+`;
 
 const DesktopNav = styled.nav`
-  display: flex;
   display: none;
 
   @media ${QUERIES.tabletAndUp} {
-    display: block;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+`;
+
+const NavLink = styled.a`
+  color: var(--color-neutral-white);
+  cursor: pointer;
+`;
+
+const ContactButton = styled(NavLink)`
+  background: var(--color-neutral-white);
+  color: var(--color-neutral-sd-desat-blue);
+  font-family: var(--font-heading);
+  padding: 16px 32px;
+  border-radius: 28px;
+  text-transform: uppercase;
+  font-weight: ${WEIGHTS.bold};
+  transition: background 500ms;
+
+  &:hover {
+    background: hsl(${COLORS.neutral.white} / 0.25);
+    color: var(--color-neutral-white);
+
+    transition: background 250ms;
   }
 `;
 
