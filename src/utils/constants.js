@@ -8,7 +8,7 @@ export const COLORS = {
   },
 
   neutral: {
-    white: `0, 69%, 100%`,
+    white: `0 69% 100%`,
     superDarkDesaturatedBlue: `212 27% 19%`,
     superDarkGrayBlue: `213 9% 39%`,
     darkGrayBlue: `232 10% 55%`,
